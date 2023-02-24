@@ -23,6 +23,7 @@ target_include_directories(mbed-client-for-azure
 target_sources(mbed-client-for-azure
     INTERFACE
         azure-iot-sdk-c/certs/certs.c
+        copied/c-utility/consolelogger.cpp
         mbed/adapters/threadapi_rtx_mbed.cpp
         mbed/adapters/tcpsocketconnection_mbed_os5.cpp
         mbed/adapters/lock_rtx_mbed.cpp

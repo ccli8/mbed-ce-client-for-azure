@@ -98,6 +98,7 @@ dependencies/c-utility/pal/linux/*
 dependencies/c-utility/pal/lwip/*
 dependencies/c-utility/pal/windows/*
 dependencies/c-utility/samples/*
+dependencies/c-utility/src/consolelogger.c
 dependencies/c-utility/src/dns_resolver_*
 dependencies/c-utility/src/etw*
 dependencies/c-utility/src/gbnetwork.c
