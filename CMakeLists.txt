@@ -3,6 +3,15 @@
 
 add_library(mbed-client-for-azure INTERFACE)
 
+if("AZIOT_OTA" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(COMPONENT_AZIOT_OTA)
+    add_subdirectory(mbed/COMPONENT_AZIOT_OTA)
+endif()
+
+if("AZIOT_UHTTP" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(COMPONENT_AZIOT_UHTTP)
+endif()
+
 target_include_directories(mbed-client-for-azure
     INTERFACE
         .
@@ -45,7 +54,6 @@ target_sources(mbed-client-for-azure
         dependencies/c-utility/src/constmap.c
         dependencies/c-utility/src/constbuffer.c
         dependencies/c-utility/src/constbuffer_array.c
-        dependencies/c-utility/src/consolelogger.c
         dependencies/c-utility/src/connection_string_parser.c
         dependencies/c-utility/src/azure_base64.c
         dependencies/c-utility/src/azure_base32.c

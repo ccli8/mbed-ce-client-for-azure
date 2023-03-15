@@ -1,0 +1,15 @@
+{
+    "name": "azure-client-ota-mcuboot",
+    "config": {
+        "provide-default-secondary-blockdevice": {
+            "help": "Provide default get_secondary_bd() implementation for MCUboot flash map backend.",
+            "options": [true, false],
+            "value": null
+        },
+        "default-secondary-blockdevice-type": {
+            "help": "Secondary block device type in default get_secondary_bd() implementation above.",
+            "options": ["FLASHIAP", "SPIF", "NUSD", "default"],
+            "value": null
+        }
+    }
+}

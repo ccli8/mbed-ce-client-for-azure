@@ -1,0 +1,63 @@
+# Copyright (c) 2020 ARM Limited. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+target_include_directories(mbed-client-for-azure
+    INTERFACE
+        iot-hub-device-update/src/adu_types/inc
+        iot-hub-device-update/src/adu_workflow/inc
+        iot-hub-device-update/src/agent/adu_core_export_helpers/inc
+        iot-hub-device-update/src/agent/adu_core_interface/inc
+        iot-hub-device-update/src/agent/adu_core_interface/src
+        iot-hub-device-update/src/agent/command_helper/inc
+        iot-hub-device-update/src/agent/device_info_interface/inc
+        iot-hub-device-update/src/communication_abstraction/inc
+        iot-hub-device-update/src/communication_managers/iothub_communication_manager/inc
+        iot-hub-device-update/src/diagnostics_component/diagnostics_async_helper/inc
+        iot-hub-device-update/src/diagnostics_component/diagnostics_devicename/inc
+        iot-hub-device-update/src/diagnostics_component/diagnostics_interface/inc
+        iot-hub-device-update/src/diagnostics_component/diagnostics_workflow/inc
+        iot-hub-device-update/src/inc
+        iot-hub-device-update/src/logging/inc
+        iot-hub-device-update/src/utils/c_utils/inc
+        iot-hub-device-update/src/utils/config_utils/inc
+        iot-hub-device-update/src/utils/contract_utils/inc
+        iot-hub-device-update/src/utils/crypto_utils/inc
+        iot-hub-device-update/src/utils/crypto_utils/src
+        iot-hub-device-update/src/utils/eis_utils/inc
+        iot-hub-device-update/src/utils/hash_utils/inc
+        iot-hub-device-update/src/utils/jws_utils/inc
+        iot-hub-device-update/src/utils/parser_utils/inc
+        iot-hub-device-update/src/utils/parson_json_utils/inc
+        iot-hub-device-update/src/utils/path_utils/inc
+        iot-hub-device-update/src/utils/string_utils/inc
+        iot-hub-device-update/src/utils/workflow_data_utils/inc
+        iot-hub-device-update/src/utils/workflow_utils/inc
+)
+
+target_sources(mbed-client-for-azure
+    INTERFACE
+        iot-hub-device-update/src/adu_types/src/adu_types.c
+        iot-hub-device-update/src/agent/adu_core_export_helpers/src/adu_core_export_helpers.c
+        iot-hub-device-update/src/agent/adu_core_interface/src/adu_core_interface.c
+        iot-hub-device-update/src/agent/adu_core_interface/src/startup_msg_helper.c
+        iot-hub-device-update/src/agent/device_info_interface/src/device_info_interface.c
+        iot-hub-device-update/src/agent/pnp_helper/src/pnp_protocol.c
+        iot-hub-device-update/src/agent_orchestration/src/agent_orchestration.c
+        iot-hub-device-update/src/communication_abstraction/src/client_handle_helper.c
+        iot-hub-device-update/src/diagnostics_component/diagnostics_devicename/src/diagnostics_devicename.c
+        iot-hub-device-update/src/utils/c_utils/src/bit_ops.c
+        iot-hub-device-update/src/utils/c_utils/src/connection_string_utils.c
+        iot-hub-device-update/src/utils/c_utils/src/http_url.c
+        iot-hub-device-update/src/utils/config_utils/src/config_parsefile.c
+        iot-hub-device-update/src/utils/contract_utils/src/contract_utils.c
+        iot-hub-device-update/src/utils/crypto_utils/src/base64_utils.c
+        iot-hub-device-update/src/utils/crypto_utils/src/root_key_util.c
+        iot-hub-device-update/src/utils/eis_utils/src/eis_coms.c
+        iot-hub-device-update/src/utils/eis_utils/src/eis_err.c
+        iot-hub-device-update/src/utils/eis_utils/src/eis_utils.c
+        iot-hub-device-update/src/utils/hash_utils/src/hash_utils.c
+        iot-hub-device-update/src/utils/parser_utils/src/parser_utils.c
+        iot-hub-device-update/src/utils/parson_json_utils/src/parson_json_utils.c
+        iot-hub-device-update/src/utils/path_utils/src/path_utils.c
+        iot-hub-device-update/src/utils/workflow_data_utils/src/workflow_data_utils.c
+)
