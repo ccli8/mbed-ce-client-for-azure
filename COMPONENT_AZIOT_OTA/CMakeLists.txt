@@ -1,8 +1,8 @@
 # Copyright (c) 2020 ARM Limited. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-target_include_directories(mbed-client-for-azure
-    INTERFACE
+target_include_directories(mbed-ce-client-for-azure
+    PUBLIC
         iot-hub-device-update/src/adu_types/inc
         iot-hub-device-update/src/adu_workflow/inc
         iot-hub-device-update/src/agent/adu_core_export_helpers/inc
@@ -34,8 +34,8 @@ target_include_directories(mbed-client-for-azure
         iot-hub-device-update/src/utils/workflow_utils/inc
 )
 
-target_sources(mbed-client-for-azure
-    INTERFACE
+target_sources(mbed-ce-client-for-azure
+    PRIVATE
         iot-hub-device-update/src/adu_types/src/adu_types.c
         iot-hub-device-update/src/agent/adu_core_export_helpers/src/adu_core_export_helpers.c
         iot-hub-device-update/src/agent/adu_core_interface/src/adu_core_interface.c

@@ -1,7 +1,7 @@
 # Copyright (c) 2020 ARM Limited. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-add_library(mbed-client-for-azure INTERFACE)
+add_library(mbed-ce-client-for-azure STATIC EXCLUDE_FROM_ALL)
 
 if("AZIOT_OTA" IN_LIST MBED_TARGET_LABELS)
     add_subdirectory(COMPONENT_AZIOT_OTA)
@@ -12,8 +12,8 @@ if("AZIOT_UHTTP" IN_LIST MBED_TARGET_LABELS)
     add_subdirectory(COMPONENT_AZIOT_UHTTP)
 endif()
 
-target_include_directories(mbed-client-for-azure
-    INTERFACE
+target_include_directories(mbed-ce-client-for-azure
+    PUBLIC
         .
         azure-iot-sdk-c/certs
         copied/c-utility
@@ -29,8 +29,8 @@ target_include_directories(mbed-client-for-azure
         dependencies/parson
 )
 
-target_sources(mbed-client-for-azure
-    INTERFACE
+target_sources(mbed-ce-client-for-azure
+    PRIVATE
         azure-iot-sdk-c/certs/certs.c
         copied/c-utility/consolelogger.cpp
         mbed/adapters/threadapi_rtx_mbed.cpp
@@ -135,3 +135,14 @@ target_sources(mbed-client-for-azure
         dependencies/parson/parson.c
 )
 
+target_link_libraries(mbed-ce-client-for-azure
+    PUBLIC
+        mbed-core-flags
+        mbed-mbedtls
+        mbed-netsocket-api
+)
+
+target_compile_definitions(mbed-mbedtls
+    PUBLIC
+        "MBEDTLS_SSL_MAX_CONTENT_LEN=4096"
+)

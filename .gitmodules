@@ -1,0 +1,27 @@
+[submodule "azure-iot-sdk-c"]
+	path = azure-iot-sdk-c
+	url = https://github.com/Azure/azure-iot-sdk-c
+[submodule "dependencies/azure-macro-utils-c"]
+	path = dependencies/azure-macro-utils-c
+	url = https://github.com/Azure/azure-macro-utils-c
+[submodule "dependencies/azure-umqtt-c"]
+	path = dependencies/azure-umqtt-c
+	url = https://github.com/Azure/azure-umqtt-c
+[submodule "dependencies/c-utility"]
+	path = dependencies/c-utility
+	url = https://github.com/Azure/azure-c-shared-utility
+[submodule "dependencies/parson"]
+	path = dependencies/parson
+	url = https://github.com/kgabis/parson
+[submodule "dependencies/umock-c"]
+	path = dependencies/umock-c
+	url = https://github.com/Azure/umock-c
+[submodule "COMPONENT_AZIOT_UHTTP/azure-uhttp-c"]
+	path = COMPONENT_AZIOT_UHTTP/azure-uhttp-c
+	url = https://github.com/Azure/azure-uhttp-c
+[submodule "COMPONENT_AZIOT_OTA/iot-hub-device-update"]
+	path = COMPONENT_AZIOT_OTA/iot-hub-device-update
+	url = https://github.com/Azure/iot-hub-device-update
+[submodule "mbed/COMPONENT_AZIOT_OTA/COMPONENT_AZIOT_OTA_PAL_MCUBOOT/mcuboot"]
+	path = mbed/COMPONENT_AZIOT_OTA/COMPONENT_AZIOT_OTA_PAL_MCUBOOT/mcuboot
+	url = https://github.com/mcu-tools/mcuboot

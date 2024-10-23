@@ -1,0 +1,6 @@
+{
+    "name": "azure-client",
+    "macros": [
+        "DONT_USE_UPLOADTOBLOB"
+    ]
+}
