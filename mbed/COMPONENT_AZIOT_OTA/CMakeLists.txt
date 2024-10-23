@@ -5,8 +5,8 @@ if("AZIOT_OTA_PAL_MCUBOOT" IN_LIST MBED_TARGET_LABELS)
     add_subdirectory(COMPONENT_AZIOT_OTA_PAL_MCUBOOT)
 endif()
 
-target_include_directories(mbed-client-for-azure
-    INTERFACE
+target_include_directories(mbed-ce-client-for-azure
+    PUBLIC
         azure-iot-sdk-c_patch
         compiler_patch
         iot-hub-device-update_patch/agent/pnp_helper
@@ -25,24 +25,24 @@ target_include_directories(mbed-client-for-azure
 )
 
 if(${MBED_TOOLCHAIN} STREQUAL "ARM")
-    target_include_directories(mbed-client-for-azure
-        INTERFACE
+    target_include_directories(mbed-ce-client-for-azure
+        PRIVATE
             posix_patch/TOOLCHAIN_ARM
     )
 elseif(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
-    target_include_directories(mbed-client-for-azure
-        INTERFACE
+    target_include_directories(mbed-ce-client-for-azure
+        PRIVATE
             posix_patch/TOOLCHAIN_GCC_ARM
     )
 elseif(${MBED_TOOLCHAIN} STREQUAL "IAR")
-    target_include_directories(mbed-client-for-azure
-        INTERFACE
+    target_include_directories(mbed-ce-client-for-azure
+        PRIVATE
             posix_patch/TOOLCHAIN_IAR
     )
 endif()
 
-target_sources(mbed-client-for-azure
-    INTERFACE
+target_sources(mbed-ce-client-for-azure
+    PRIVATE
         iot-hub-device-update_patch/agent/adu_core_interface/device_properties.c
         iot-hub-device-update_patch/adu_workflow/agent_workflow.cpp
         iot-hub-device-update_patch/iothub_communication_manager/iothub_communication_manager.c

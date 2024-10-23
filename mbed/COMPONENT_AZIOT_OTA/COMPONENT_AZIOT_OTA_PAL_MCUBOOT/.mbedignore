@@ -1,2 +1,0 @@
-mcuboot/boot/bootutil/include/bootutil/crypto/*
-mcuboot/boot/mbed/src/flash_map_backend.cpp
